@@ -5,6 +5,8 @@ import traceback
 
 def main():
     parser = argparse.ArgumentParser(description="Time the edrixs MPI benchmark cases.")
+    parser.add_argument("--nd", type=int, default=8,
+                        help="nd value for the benchmark cases (default: 8)")
     parser.add_argument("--output", default="timings.csv", metavar="PATH",
                         help="CSV output file (default: timings.csv; overwritten)")
     args = parser.parse_args()
@@ -14,7 +16,14 @@ def main():
     comm = MPI.COMM_WORLD
     output = None
     try:
-        from calculations import ed, xas, rixsmap, singlerixs
+        import edrixs
+        from calculations import model, ed, xas, rixsmap, singlerixs
+
+        # Compile the shared Numba operator kernels on every rank before timing.
+        problem, _, _ = model(9)
+        warmup_ops = edrixs.get_ops(*problem, backend="scipy", use_numba=True)
+        del warmup_ops, problem
+        comm.Barrier()
 
         if comm.rank == 0:
             output = open(args.output, "w", newline="")
@@ -24,20 +33,20 @@ def main():
             print(f"{'function':<12} {'nd':>2} {'backend':<8} {'ranks':>5} {'seconds':>12}",
                   flush=True)
 
-        for nd in [6]:
-            for backend in ["petsc", "fortran"]:
-                for f in [ed, xas, rixsmap, singlerixs]:
-                    comm.Barrier()
-                    start = MPI.Wtime()
-                    result = f(nd, backend=backend)
-                    elapsed = MPI.Wtime() - start
-                    del result
-                    seconds = comm.reduce(elapsed, op=MPI.MAX, root=0)
-                    if comm.rank == 0:
-                        writer.writerow([f.__name__, nd, backend, comm.size, seconds])
-                        output.flush()
-                        print(f"{f.__name__:<12} {nd:>2} {backend:<8} "
-                              f"{comm.size:>5} {seconds:>12.6f}", flush=True)
+        nd = args.nd
+        for backend in ["petsc", "fortran"]:
+            for f in [ed, xas, rixsmap, singlerixs]:
+                comm.Barrier()
+                start = MPI.Wtime()
+                result = f(nd, backend=backend)
+                elapsed = MPI.Wtime() - start
+                del result
+                seconds = comm.reduce(elapsed, op=MPI.MAX, root=0)
+                if comm.rank == 0:
+                    writer.writerow([f.__name__, nd, backend, comm.size, seconds])
+                    output.flush()
+                    print(f"{f.__name__:<12} {nd:>2} {backend:<8} "
+                          f"{comm.size:>5} {seconds:>12.6f}", flush=True)
         if output is not None:
             output.close()
     except (Exception, KeyboardInterrupt):
