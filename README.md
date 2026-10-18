@@ -17,7 +17,9 @@ Changing `nd` changes the basis size and computational cost; lower values do
 not necessarily give smaller problems. `--output` defaults to `timings.csv`.
 
 The runner executes the `petsc` backend followed by `fortran`, with functions
-`ed`, `xas`, `rixsmap`, and `singlerixs` in that order for each backend. All ranks execute
+`ed`, `xas`, `rixsmap`, `rixsmap_recompute`, and `singlerixs` in that order for each backend.
+`rixsmap_recompute` uses `matrix_lifetime='recompute'` for PETSc; for Fortran,
+it uses the same settings as `rixsmap`. All ranks execute
 each case together. Rank 0 prints one timing row per completed case and writes
 `function,nd,backend,ranks,seconds` to the CSV. The output file is overwritten on
 each run and flushed after each row, preserving completed measurements if a

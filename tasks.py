@@ -17,7 +17,7 @@ def main():
     output = None
     try:
         import edrixs
-        from calculations import model, ed, xas, rixsmap, singlerixs
+        from calculations import model, ed, xas, rixsmap, rixsmap_recompute, singlerixs
 
         # Compile the shared Numba operator kernels on every rank before timing.
         problem, _, _ = model(9)
@@ -30,12 +30,12 @@ def main():
             writer = csv.writer(output)
             writer.writerow(["function", "nd", "backend", "ranks", "seconds"])
             output.flush()
-            print(f"{'function':<12} {'nd':>2} {'backend':<8} {'ranks':>5} {'seconds':>12}",
+            print(f"{'function':<17} {'nd':>2} {'backend':<8} {'ranks':>5} {'seconds':>12}",
                   flush=True)
 
         nd = args.nd
         for backend in ["petsc", "fortran"]:
-            for f in [ed, xas, rixsmap, singlerixs]:
+            for f in [ed, xas, rixsmap, rixsmap_recompute, singlerixs]:
                 comm.Barrier()
                 start = MPI.Wtime()
                 result = f(nd, backend=backend)
@@ -45,7 +45,7 @@ def main():
                 if comm.rank == 0:
                     writer.writerow([f.__name__, nd, backend, comm.size, seconds])
                     output.flush()
-                    print(f"{f.__name__:<12} {nd:>2} {backend:<8} "
+                    print(f"{f.__name__:<17} {nd:>2} {backend:<8} "
                           f"{comm.size:>5} {seconds:>12.6f}", flush=True)
         if output is not None:
             output.close()
