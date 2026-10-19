@@ -36,9 +36,12 @@ def main():
         nd = args.nd
         for backend in ["petsc", "fortran"]:
             for f in [ed, xas, singlerixs]:
+                case_kws = {}
+                if backend == "petsc" and f in (xas, singlerixs):
+                    case_kws["matrix_lifetime"] = "recompute"
                 comm.Barrier()
                 start = MPI.Wtime()
-                result = f(nd, backend=backend)
+                result = f(nd, backend=backend, **case_kws)
                 elapsed = MPI.Wtime() - start
                 del result
                 seconds = comm.reduce(elapsed, op=MPI.MAX, root=0)

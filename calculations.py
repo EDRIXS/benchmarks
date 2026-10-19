@@ -47,15 +47,16 @@ def ed(nd, backend='petsc'):
     eval_i, evec_i = edrixs.ed(hmat_i, num_evals=3, shift=shift)
     return eval_i
 
-def xas(nd, backend='petsc'):
+def xas(nd, backend='petsc', *, matrix_lifetime='retain'):
     problem, shift, resE = model(nd)
     hmat_i, hmat_n, trans_ops = edrixs.get_ops(*problem, backend=backend)
     eval_i, evec_i = edrixs.ed(hmat_i, num_evals=3, shift=shift)
     gamma_c = 0.48 / 2
     ominc = np.arange(resE-3, resE+3, 0.1)
+    backend_kws = {'matrix_lifetime': matrix_lifetime} if backend == 'petsc' else {}
     Ixas = edrixs.xas(
         eval_i, evec_i, hmat_n, trans_ops, ominc, pol_type=[('linear', 0)],
-        gamma_c=gamma_c)[:, 0]
+        gamma_c=gamma_c, backend_kws=backend_kws)[:, 0]
     Ixas /= Ixas.max()
     return ominc, Ixas
 
@@ -114,13 +115,15 @@ def rixsmap_recompute(nd, backend='petsc'):
     return ominc, eloss, rixs_spectrum
 
 
-def singlerixs(nd, backend='petsc'):
+def singlerixs(nd, backend='petsc', *, matrix_lifetime='retain'):
     problem, shift, resE = model(nd)
     emat_i, umat_i, basis_i, emat_n, umat_n, basis_n, trans_mat = problem
     hmat_i, hmat_n, trans_ops = edrixs.get_ops(*problem, backend=backend)
     eval_i, evec_i = edrixs.ed(hmat_i, num_evals=3, shift=shift)
 
     backend_kws={"linsys_maxiter": 5000} if backend == "petsc" else {"linsys_max": 5000}
+    if backend == 'petsc':
+        backend_kws['matrix_lifetime'] = matrix_lifetime
 
     gamma_c = 0.48 / 2
     ominc = [resE]
