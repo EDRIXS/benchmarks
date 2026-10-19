@@ -1,0 +1,7 @@
+function,nd,backend,ranks,seconds
+ed,2,petsc,2,13.879137268000001
+xas,2,petsc,2,180.010133311
+singlerixs,2,petsc,2,431.43949395899995
+ed,2,fortran,2,12.027105678999988
+xas,2,fortran,2,334.02103496300003
+singlerixs,2,fortran,2,402.96580824700004

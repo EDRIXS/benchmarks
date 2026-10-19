@@ -1,0 +1,7 @@
+function,nd,backend,ranks,seconds
+ed,2,petsc,2,12.150153632999999
+xas,2,petsc,2,100.090102965
+singlerixs,2,petsc,2,269.78835074799997
+ed_COO,2,petsc,2,13.83565099599997
+xas_COO,2,petsc,2,118.190275321
+singlerixs_COO,2,petsc,2,415.221221258

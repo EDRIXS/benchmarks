@@ -1,0 +1,11 @@
+function,nd,backend,ranks,seconds
+ed,6,petsc,2,0.9680743170000001
+xas,6,petsc,2,1.3372755439999997
+rixsmap,6,petsc,2,8.334503368
+rixsmap_recompute,6,petsc,2,53.46819408500001
+singlerixs,6,petsc,2,1.9155707500000005
+ed,6,fortran,2,0.49160851999999977
+xas,6,fortran,2,6.170184887000005
+rixsmap,6,fortran,2,66.316997905
+rixsmap_recompute,6,fortran,2,62.52831451100002
+singlerixs,6,fortran,2,2.847662667999998

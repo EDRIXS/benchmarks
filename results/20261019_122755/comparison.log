@@ -1,0 +1,15 @@
+nd=8 petsc: 0.598s -> 0.683s; speedup=0.875x
+nd=8 fortran: 0.310s -> 0.310s; speedup=0.999x
+nd=7 petsc: 1.592s -> 1.429s; speedup=1.114x
+nd=7 fortran: 0.917s -> 0.892s; speedup=1.028x
+nd=6 petsc: 6.162s -> 5.904s; speedup=1.044x
+nd=6 fortran: 5.605s -> 5.066s; speedup=1.106x
+nd=5 petsc: 28.075s -> 26.474s; speedup=1.060x
+nd=5 fortran: 24.934s -> 22.090s; speedup=1.129x
+nd=4 petsc: 126.051s -> 112.182s; speedup=1.124x
+nd=4 fortran: 81.398s -> 71.990s; speedup=1.131x
+nd=3 petsc: 219.711s -> 266.588s; speedup=0.824x
+nd=3 fortran: 157.649s -> 136.261s; speedup=1.157x
+nd=2 petsc: 473.013s -> 381.796s; speedup=1.239x
+nd=2 fortran: 268.740s -> 266.899s; speedup=1.007x
+Single observations per case; timing validation does not establish numerical equivalence.

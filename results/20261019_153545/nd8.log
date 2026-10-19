@@ -1,0 +1,470 @@
+function          nd backend  ranks      seconds
+ed                 8 petsc        2     0.497204
+xas                8 petsc        2     0.136798
+singlerixs         8 petsc        2     0.140178
+/home/mdean/miniconda3/envs/edrixs_env_petsc/lib/python3.14/site-packages/edrixs/solvers.py:270: UserWarning: Fortran ED ignores shift; continuing without applying the shift.
+  return ed_backend(
+/home/mdean/miniconda3/envs/edrixs_env_petsc/lib/python3.14/site-packages/edrixs/solvers.py:270: UserWarning: Fortran ED ignores shift; continuing without applying the shift.
+  return ed_backend(
+ --------------------------------------------
+  fedrixs >>> ED begin ... 
+
+  fedrixs >>> ndim_i:         190  is smaller than min_ndim:        1000
+  fedrixs >>> set ed_solver = 0, use full-diagonalization !
+
+     num_val_orbs:               20
+     ed_solver:                   0
+     neval:                       3
+     nvector:                     3
+     maxiter:                   500
+     min_ndim:                 1000
+     ncv:                         5
+     nhopp_i:                    74
+     ncoul_i:                   340
+     ndim_i:                    190
+     nprocs:                      2
+     eigval_tol:           0.10E-07
+     idump:                       T
+
+  fedrixs >>> Build Hamiltonian ...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+  fedrixs >>> Number of nonzero elements of the Hamiltonian                 1234
+  fedrixs >>> Done ! Time used:    5.8540000000002479E-003   seconds
+
+  fedrixs >>> Diagonalize Hamiltonian to find a few lowest states ...
+
+
+  fedrixs >>> Done ! Time used:    2.8591999999999729E-002   seconds
+
+  fedrixs >>> Calculate the density matrix ... 
+  fedrixs >>> Done ! Time used:    4.0200000000005787E-003   seconds
+
+  fedrixs >>> ED end ! Total time used:    3.8466000000000555E-002   seconds
+
+ed                 8 fortran      2     0.165057
+ --------------------------------------------
+  fedrixs >>> ED begin ... 
+
+  fedrixs >>> ndim_i:         190  is smaller than min_ndim:        1000
+  fedrixs >>> set ed_solver = 0, use full-diagonalization !
+
+     num_val_orbs:               20
+     ed_solver:                   0
+     neval:                       3
+     nvector:                     3
+     maxiter:                   500
+     min_ndim:                 1000
+     ncv:                         5
+     nhopp_i:                    74
+     ncoul_i:                   340
+     ndim_i:                    190
+     nprocs:                      2
+     eigval_tol:           0.10E-07
+     idump:                       T
+
+  fedrixs >>> Build Hamiltonian ...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+  fedrixs >>> Number of nonzero elements of the Hamiltonian                 1234
+  fedrixs >>> Done ! Time used:    6.7439999999998612E-003   seconds
+
+  fedrixs >>> Diagonalize Hamiltonian to find a few lowest states ...
+
+
+  fedrixs >>> Done ! Time used:    3.2255000000000145E-002   seconds
+
+  fedrixs >>> Calculate the density matrix ... 
+  fedrixs >>> Done ! Time used:    3.8059999999999761E-003   seconds
+
+  fedrixs >>> ED end ! Total time used:    4.2804999999999982E-002   seconds
+
+ ---------------------------
+  fedrixs >>> XAS Begin ... 
+
+
+     num_val_orbs:               20
+     num_core_orbs:               6
+     ndim_i:                    190
+     ndim_n:                    120
+     nhopp_n:                    84
+     ncoul_n:                   932
+     num_gs:                      3
+     nkryl:                     200
+
+  fedrixs >>> For ground state:            1
+     Building transition operator for absorption process ...
+     Done !
+
+     Apply transition operator on the ground state to get intermediate state...
+     Done !
+
+     Build Hamiltonian for intermediate configuration...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of intermediate Hamiltonian:                   686
+     Done !
+
+     Building Krylov space for XAS spectrum ...
+     Krylov iteration:     50
+     Krylov iteration:    100
+     Krylov iteration:    150
+     Krylov iteration:    200
+     Done !
+
+  fedrixs >>> For ground state:            2
+     Building transition operator for absorption process ...
+     Done !
+
+     Apply transition operator on the ground state to get intermediate state...
+     Done !
+
+     Build Hamiltonian for intermediate configuration...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of intermediate Hamiltonian:                   686
+     Done !
+
+     Building Krylov space for XAS spectrum ...
+     Krylov iteration:     50
+     Krylov iteration:    100
+     Krylov iteration:    150
+     Krylov iteration:    200
+     Done !
+
+  fedrixs >>> For ground state:            3
+     Building transition operator for absorption process ...
+     Done !
+
+     Apply transition operator on the ground state to get intermediate state...
+     Done !
+
+     Build Hamiltonian for intermediate configuration...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of intermediate Hamiltonian:                   686
+     Done !
+
+     Building Krylov space for XAS spectrum ...
+     Krylov iteration:     50
+     Krylov iteration:    100
+     Krylov iteration:    150
+     Krylov iteration:    200
+     Done !
+
+
+  fedrixs >>> XAS End !
+ ---------------------------
+  fedrixs >>> XAS Begin ... 
+
+
+     num_val_orbs:               20
+     num_core_orbs:               6
+     ndim_i:                    190
+     ndim_n:                    120
+     nhopp_n:                    84
+     ncoul_n:                   932
+     num_gs:                      3
+     nkryl:                     200
+
+  fedrixs >>> For ground state:            1
+     Building transition operator for absorption process ...
+     Done !
+
+     Apply transition operator on the ground state to get intermediate state...
+     Done !
+
+     Build Hamiltonian for intermediate configuration...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of intermediate Hamiltonian:                   686
+     Done !
+
+     Building Krylov space for XAS spectrum ...
+     Krylov iteration:     50
+     Krylov iteration:    100
+     Krylov iteration:    150
+     Krylov iteration:    200
+     Done !
+
+  fedrixs >>> For ground state:            2
+     Building transition operator for absorption process ...
+     Done !
+
+     Apply transition operator on the ground state to get intermediate state...
+     Done !
+
+     Build Hamiltonian for intermediate configuration...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of intermediate Hamiltonian:                   686
+     Done !
+
+     Building Krylov space for XAS spectrum ...
+     Krylov iteration:     50
+     Krylov iteration:    100
+     Krylov iteration:    150
+     Krylov iteration:    200
+     Done !
+
+  fedrixs >>> For ground state:            3
+     Building transition operator for absorption process ...
+     Done !
+
+     Apply transition operator on the ground state to get intermediate state...
+     Done !
+
+     Build Hamiltonian for intermediate configuration...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of intermediate Hamiltonian:                   686
+     Done !
+
+     Building Krylov space for XAS spectrum ...
+     Krylov iteration:     50
+     Krylov iteration:    100
+     Krylov iteration:    150
+     Krylov iteration:    200
+     Done !
+
+
+  fedrixs >>> XAS End !
+ ---------------------------
+  fedrixs >>> XAS Begin ... 
+
+
+     num_val_orbs:               20
+     num_core_orbs:               6
+     ndim_i:                    190
+     ndim_n:                    120
+     nhopp_n:                    84
+     ncoul_n:                   932
+     num_gs:                      3
+     nkryl:                     200
+
+  fedrixs >>> For ground state:            1
+     Building transition operator for absorption process ...
+     Done !
+
+     Apply transition operator on the ground state to get intermediate state...
+     Done !
+
+     Build Hamiltonian for intermediate configuration...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of intermediate Hamiltonian:                   686
+     Done !
+
+     Building Krylov space for XAS spectrum ...
+     Krylov iteration:     50
+     Krylov iteration:    100
+     Krylov iteration:    150
+     Krylov iteration:    200
+     Done !
+
+  fedrixs >>> For ground state:            2
+     Building transition operator for absorption process ...
+     Done !
+
+     Apply transition operator on the ground state to get intermediate state...
+     Done !
+
+     Build Hamiltonian for intermediate configuration...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of intermediate Hamiltonian:                   686
+     Done !
+
+     Building Krylov space for XAS spectrum ...
+     Krylov iteration:     50
+     Krylov iteration:    100
+     Krylov iteration:    150
+     Krylov iteration:    200
+     Done !
+
+  fedrixs >>> For ground state:            3
+     Building transition operator for absorption process ...
+     Done !
+
+     Apply transition operator on the ground state to get intermediate state...
+     Done !
+
+     Build Hamiltonian for intermediate configuration...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of intermediate Hamiltonian:                   686
+     Done !
+
+     Building Krylov space for XAS spectrum ...
+     Krylov iteration:     50
+     Krylov iteration:    100
+     Krylov iteration:    150
+     Krylov iteration:    200
+     Done !
+
+
+  fedrixs >>> XAS End !
+xas                8 fortran      2     0.303425
+ --------------------------------------------
+  fedrixs >>> ED begin ... 
+
+  fedrixs >>> ndim_i:         190  is smaller than min_ndim:        1000
+  fedrixs >>> set ed_solver = 0, use full-diagonalization !
+
+     num_val_orbs:               20
+     ed_solver:                   0
+     neval:                       3
+     nvector:                     3
+     maxiter:                   500
+     min_ndim:                 1000
+     ncv:                         5
+     nhopp_i:                    74
+     ncoul_i:                   340
+     ndim_i:                    190
+     nprocs:                      2
+     eigval_tol:           0.10E-07
+     idump:                       T
+
+  fedrixs >>> Build Hamiltonian ...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+  fedrixs >>> Number of nonzero elements of the Hamiltonian                 1234
+  fedrixs >>> Done ! Time used:    6.0430000000000206E-003   seconds
+
+  fedrixs >>> Diagonalize Hamiltonian to find a few lowest states ...
+
+
+  fedrixs >>> Done ! Time used:    3.1448999999999838E-002   seconds
+
+  fedrixs >>> Calculate the density matrix ... 
+  fedrixs >>> Done ! Time used:    4.8449999999999882E-003   seconds
+
+  fedrixs >>> ED end ! Total time used:    4.2336999999999847E-002   seconds
+
+  fedrixs >>> RIXS Begin ...
+
+     num_val_orbs:               20
+     num_core_orbs:               6
+     ndim_i:                    190
+     ndim_n:                    120
+     ndim_f:                    190
+     nhopp_i:                    74
+     nhopp_n:                    84
+     ncoul_i:                   340
+     ncoul_n:                   932
+     num_gs:                      3
+     nkryl:                     200
+     linsys_max:               5000
+     linsys_tol:           0.10E-09
+     omega_in:           851.846500
+     gamma_in              0.240000
+
+  fedrixs >>> For initial state:             1
+     Building transition operator for absorption process ...
+     Done !
+
+     Apply transition operator on the ground state to get intermediate state...
+     Done !
+
+     Building Hamiltonian for intermediate configuration ...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of intermediate Hamiltonian:                   686
+     Done !
+
+     Solve linear equation ...
+     PMINRES iteration:     40  0.96E-10  -->  0.10E-09
+     Final precision of |H*x-b|:    0.96E-10
+     Done !
+
+     Building transition operator for the emission process ...
+     Done !
+
+     Applying transition operator to get final state ...
+     Building Hamiltonian for initial configuration ...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of initial Hamiltonian:                  1234
+     Done !
+
+     Building Krylov space for RIXS spectrum ...
+     Krylov iteration:     50
+     Krylov iteration:    100
+     Krylov iteration:    150
+     Krylov iteration:    200
+     Done !
+
+  fedrixs >>> For initial state:             2
+     Building transition operator for absorption process ...
+     Done !
+
+     Apply transition operator on the ground state to get intermediate state...
+     Done !
+
+     Building Hamiltonian for intermediate configuration ...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of intermediate Hamiltonian:                   686
+     Done !
+
+     Solve linear equation ...
+     PMINRES iteration:     44  0.80E-10  -->  0.10E-09
+     Final precision of |H*x-b|:    0.81E-10
+     Done !
+
+     Building transition operator for the emission process ...
+     Done !
+
+     Applying transition operator to get final state ...
+     Building Hamiltonian for initial configuration ...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of initial Hamiltonian:                  1234
+     Done !
+
+     Building Krylov space for RIXS spectrum ...
+     Krylov iteration:     50
+     Krylov iteration:    100
+     Krylov iteration:    150
+     Krylov iteration:    200
+     Done !
+
+  fedrixs >>> For initial state:             3
+     Building transition operator for absorption process ...
+     Done !
+
+     Apply transition operator on the ground state to get intermediate state...
+     Done !
+
+     Building Hamiltonian for intermediate configuration ...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of intermediate Hamiltonian:                   686
+     Done !
+
+     Solve linear equation ...
+     PMINRES iteration:     45  0.59E-10  -->  0.10E-09
+     Final precision of |H*x-b|:    0.59E-10
+     Done !
+
+     Building transition operator for the emission process ...
+     Done !
+
+     Applying transition operator to get final state ...
+     Building Hamiltonian for initial configuration ...
+     Allocate memory for ham_csr ...
+     Really building Hamiltonian begin here ...
+     Number of nonzero elements of initial Hamiltonian:                  1234
+     Done !
+
+     Building Krylov space for RIXS spectrum ...
+     Krylov iteration:     50
+     Krylov iteration:    100
+     Krylov iteration:    150
+     Krylov iteration:    200
+     Done !
+
+
+  fedrixs >>> RIXS End !
+singlerixs         8 fortran      2     0.224583
+[0m[0m

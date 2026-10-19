@@ -1,0 +1,10 @@
+WHO                                      UID  USER  PID    COMM            WHAT                         WHY                                       MODE
+NetworkManager                           0    root  672    NetworkManager  sleep                        NetworkManager needs to turn off networks delay
+UPower                                   0    root  842    upowerd         sleep                        Pause device polling                      delay
+1password                                1000 mdean 1016   1password       sleep                        Application cleanup before suspend        delay
+Omarchy                                  1000 mdean 649916 systemd-inhibit sleep                        Lock screen before suspend                delay
+bash /home/mdean/Documents/programs/ben… 1000 mdean 657102 systemd-inhibit sleep:idle:handle-lid-switch long calculation                          block
+code                                     1000 mdean 526906 code            shutdown                     Ensure a clean shutdown                   delay
+code                                     1000 mdean 526906 code            sleep                        Application cleanup before suspend        delay
+
+7 inhibitors listed.

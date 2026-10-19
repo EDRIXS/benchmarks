@@ -1,0 +1,10 @@
+nd=8: exit=0, 6 valid timings (3 PETSc + 3 Fortran), 2 ranks
+nd=7: exit=0, 6 valid timings (3 PETSc + 3 Fortran), 2 ranks
+nd=6: exit=0, 6 valid timings (3 PETSc + 3 Fortran), 2 ranks
+nd=5: exit=0, 6 valid timings (3 PETSc + 3 Fortran), 2 ranks
+nd=4: exit=0, 6 valid timings (3 PETSc + 3 Fortran), 2 ranks
+nd=3: exit=0, 6 valid timings (3 PETSc + 3 Fortran), 2 ranks
+nd=2: exit=0, 6 valid timings (3 PETSc + 3 Fortran), 2 ranks
+Total: 7 successful runs, 42 valid timing rows.
+Source files unchanged.
+Sleep/idle/lid-switch inhibitor verified during execution.

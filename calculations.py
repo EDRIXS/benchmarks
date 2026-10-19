@@ -54,7 +54,7 @@ def xas(nd, backend='petsc'):
     gamma_c = 0.48 / 2
     ominc = np.arange(resE-3, resE+3, 0.1)
     Ixas = edrixs.xas(
-        eval_i, evec_i, hmat_n, trans_ops, ominc,
+        eval_i, evec_i, hmat_n, trans_ops, ominc, pol_type=[('linear', 0)],
         gamma_c=gamma_c)[:, 0]
     Ixas /= Ixas.max()
     return ominc, Ixas

@@ -1,0 +1,13 @@
+2026-10-19T10:25:26-04:00
+/home/mdean/miniconda3/envs/edrixs_env_petsc/bin/python
+/home/mdean/miniconda3/envs/edrixs_env_petsc/bin/mpirun
+Python 3.14.8
+mpirun (Open MPI) 5.0.11
+
+Report bugs to https://www.open-mpi.org/community/help/
+
+1
+1
+1
+launch: systemd-inhibit --what=sleep:idle:handle-lid-switch --why="long calculation" bash results/20261019_102513/run.sh
+cases: mpirun -n 2 python tasks.py --nd N --output results/20261019_102513/timings_ndN.csv

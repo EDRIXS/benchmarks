@@ -1,0 +1,8 @@
+function          nd backend  ranks      seconds
+ed                 7 petsc        2     0.559130
+xas                7 petsc        2     0.334407
+singlerixs         7 petsc        2     0.351306
+ed_COO             7 petsc        2     0.205449
+xas_COO            7 petsc        2     0.303416
+singlerixs_COO     7 petsc        2     0.357225
+[0m[0m

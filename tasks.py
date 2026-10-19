@@ -35,7 +35,7 @@ def main():
 
         nd = args.nd
         for backend in ["petsc", "fortran"]:
-            for f in [ed, xas, rixsmap, rixsmap_recompute, singlerixs]:
+            for f in [ed, xas, singlerixs]:
                 comm.Barrier()
                 start = MPI.Wtime()
                 result = f(nd, backend=backend)
